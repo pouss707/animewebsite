@@ -1,13 +1,12 @@
 import React from 'react'
 import Header from './Header'
-import testimg from '../assets/test.png'
+import HomeSlider from './HomeSlider'
+import '../App.css'
 function Home() {
     return (
         <div>
             <Header />
-            <div className='flex justify-center items-center h-[500px] w-screen pt-[208px]' >
-                <img className='h-[608px] w-[1200px]' src={testimg} alt="test" />
-            </div>
+            <HomeSlider />
         </div>
     )
 }

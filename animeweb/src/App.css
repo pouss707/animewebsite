@@ -1,7 +1,100 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  transition: .4s;
+  border-radius: 50px;
 }
 
+.slider .knob {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  left: 0.4em;
+  bottom: 0.3em;
+  transition: .4s;
+}
+
+/* Background toggle */
+.switch input:checked + .slider {
+  background-color: white;
+}
+
+/* Move knob image */
+.switch input:checked + .slider .knob {
+  transform: translateX(1.5em);
+  /* Optional: change image */
+  
+}
+
+
+.btn {
+  background: white;
+  font-family: inherit;
+  padding:  5px 10px;
+  font-weight: 900;
+  font-size: 13px;
+  color: black;
+  border: 3px solid black;
+  border-radius: 50px;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.btn:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+.right {
+  position: absolute;
+  right: 110px;
+  top: 389px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.right:active {
+  animation: moveRightAndBack 0.3s;
+}
+
+@keyframes moveRightAndBack {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+.left {
+  position: absolute;
+  left: 110px;
+  top: 389px;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.left:active {
+  animation: moveLeftAndBack 0.3s;
+}
+
+@keyframes moveLeftAndBack {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
